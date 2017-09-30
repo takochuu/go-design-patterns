@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 
+	"github.com/takochuu/go-design-patterns/abstract_factory"
 	"github.com/takochuu/go-design-patterns/composite"
 	"github.com/takochuu/go-design-patterns/decorator"
 	"github.com/takochuu/go-design-patterns/iterator"
@@ -30,4 +31,11 @@ func main() {
 	cashewnuts := decorator.NewCashewNuts(decorator.NewMatcha())
 	fmt.Println(cashewnuts.GetName())
 	fmt.Println(cashewnuts.GetCost())
+
+	// abstruct_factory
+	pot := abstract_factory.NewHotPot()
+	mizutaki := abstract_factory.NewMizutakiFactory()
+	pot.AddMain(mizutaki.GetMain())
+	pot.AddSoup(mizutaki.GetSoup())
+	fmt.Println(pot.Print())
 }
