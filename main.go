@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+
 	"github.com/takochuu/go-design-patterns/composite"
+	"github.com/takochuu/go-design-patterns/decorator"
 	"github.com/takochuu/go-design-patterns/iterator"
 )
 
@@ -23,4 +25,9 @@ func main() {
 		book := i.Next()
 		fmt.Println(book.Name)
 	}
+
+	// decorator
+	cashewnuts := decorator.NewCashewNuts(decorator.NewMatcha())
+	fmt.Println(cashewnuts.GetName())
+	fmt.Println(cashewnuts.GetCost())
 }
