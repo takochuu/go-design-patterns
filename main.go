@@ -6,6 +6,7 @@ import (
 	"github.com/takochuu/go-design-patterns/abstract_factory"
 	"github.com/takochuu/go-design-patterns/composite"
 	"github.com/takochuu/go-design-patterns/decorator"
+	"github.com/takochuu/go-design-patterns/facade"
 	"github.com/takochuu/go-design-patterns/factory_method"
 	"github.com/takochuu/go-design-patterns/iterator"
 )
@@ -43,4 +44,9 @@ func main() {
 	// factory_method
 	method := factory_method.NewAccount("たこちゅ")
 	fmt.Println(method.GetName())
+
+	// facade
+	bookTitle := facade.NewBookTitleMaker()
+	fmt.Println(bookTitle.GetName("hoge"))
+	fmt.Println(bookTitle.GetName("piyo"))
 }
